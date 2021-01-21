@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="styles4.css"> -->
+    <link rel="stylesheet" href="../bootstrap.min.css">
+</head>
+<style>
+    :root{
+    --primarycolor: gold;
+    --secondaryColor: goldenrod;
+    --padding:10px;
+    
+}
+*{
+    
+    color: whitesmoke;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: serif;
+    
+}
+.video-container{
+    min-width: 100vw;
+    min-height: 100vh;
+    object-fit: contain;
+    position: fixed;
+    z-index: -3;
+}
+.section{
+    position: relative;
+    z-index: 3;
+background-color: rgba(56, 55, 55, 0.582);
+}
+.section-center{
+    width: 100vw;
+    height: 100vh;
+
+}
+
+.title{
+    text-align: center;
+    font-family: serif;
+
+}
+.underline{
+    height: 5px;
+    width: 200px;
+    background-color:var(--secondaryColor);
+    margin: 0 auto;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-bottom: 60px;
+
+}
+.btn-container{
+    text-align: center;
+    margin-bottom: 40px;
+
+}
+.filter-btn{
+    text-transform: capitalize;
+    padding: 0px 10px;
+    border: var(--secondaryColor) 2px solid;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+background-color: rgb(56, 55, 55);
+}
+.filter-btn:hover{
+    border-color: whitesmoke;
+    color: var(--secondaryColor);
+}
+.section-center{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 20px;
+    column-gap: 40px;
+
+}
+.menu-section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+    margin-top: 20px;
+
+}
+img{
+    width: 250px;
+    height: 170px;
+    
+}
+.menu-image{
+    border: var(--secondaryColor) solid 3px;
+    border-radius: 20px;
+
+}
+.content-section{
+    width: 100%;
+
+}
+.dish{
+    display: inline;
+    display: grid;
+    grid-template-columns: 1fr 0.3fr;
+    margin-top: 10px;
+    border-bottom: var(--secondaryColor) solid 1px;
+    border-radius: 20px;
+
+}
+.dish-name{
+    font-size: 22px;
+    text-transform: capitalize;
+    font-family: serif;
+    margin-left: 15px;
+
+}
+.dish-price{
+    font-size: 20px;
+    text-align: right;
+    color: var(--secondaryColor);
+
+}
+.content{
+    font-size: 14px;
+    margin-left: 10px;
+    text-align: justify;
+
+}
+@media screen and (max-width:1000px){
+    .section-center{
+        display: block;
+
+    }
+    .menu-image{
+        width: 300px;
+    }
+
+}
+@media screen and (max-width:520px){
+    .menu-section{
+        display: block;
+        margin-bottom: 40px;
+        
+    }
+    .menu-image{
+        width: 100%;
+        height: 200px;
+        
+    }
+
+}
+</style>
+<body>
+    <video class="video-container" autoplay loop >
+        <source src="../Running Sushi - 3625.mp4" >
+    </video>
+    <div class="section ">
+        <div class="title">
+            <h1 class="heading">OUR MENU</h1>
+            <div class="underline"></div>
+        </div>
+        <div class="btn-container">
+        </div>
+        <div class="section-center container">
+            <!-- <div class="menu-section">
+                <img src="../images/item-1.jpeg" class="menu-image" alt="">
+                <div class="content-section">
+                    <div class="dish">
+                        <h3 class="dish-name">Lorem, ipsum.</h3>
+                        <h3 class="dish-price">$70.4</h3>
+                    </div>
+                    <p class="content"> 
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos molestiae nobis cumque neque fuga sint exercitationem, impedit ut, possimus perferendis facilis.
+                    </p>
+                </div>
+            </div> 
+        -->
+           
+        </div>
+    </div>
+   
+    <script>
+        const menu = [
+                {
+                    id: 1,
+                    title: "buttermilk pancakes",
+                    category: "breakfast",
+                    price: 15.99,
+                    img: "/images/item-1.jpeg",
+                    desc: `I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed `,
+                },
+                {
+                    id: 2,
+                    title: "diner double",
+                    category: "lunch",
+                    price: 13.99,
+                    img: "/images/item-2.jpeg",
+                    desc: `vaporware iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa thundercats `,
+                },
+                {
+                    id: 3,
+                    title: "godzilla milkshake",
+                    category: "shakes",
+                    price: 6.99,
+                    img: "/images/item-3.jpeg",
+                    desc: `ombucha chillwave fanny pack 3 wolf moon street art photo booth before they sold out organic viral.`,
+                },
+                {
+                    id: 4,
+                    title: "country delight",
+                    category: "breakfast",
+                    price: 20.99,
+                    img: "/images/item-4.jpeg",
+                    desc: `Shabby chic keffiyeh neutra snackwave pork belly shoreditch. Prism austin mlkshk truffaut, `,
+                },
+                {
+                    id: 5,
+                    title: "egg attack",
+                    category: "lunch",
+                    price: 22.99,
+                    img: "/images/item-5.jpeg",
+                    desc: `franzen vegan pabst bicycle rights kickstarter pinterest meditation farm-to-table 90's pop-up `,
+                },
+                {
+                    id: 6,
+                    title: "oreo dream",
+                    category: "shakes",
+                    price: 18.99,
+                    img: "/images/item-6.jpeg",
+                    desc: `Portland chicharrones ethical edison bulb, palo santo craft beer chia heirloom iPhone everyday`,
+                },
+                {
+                    id: 7,
+                    title: "bacon overflow",
+                    category: "breakfast",
+                    price: 8.99,
+                    img: "/images/item-7.jpeg",
+                    desc: `carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird `,
+                },
+                {
+                    id: 8,
+                    title: "american classic",
+                    category: "lunch",
+                    price: 12.99,
+                    img: "/images/item-8.jpeg",
+                    desc: `on it tumblr kickstarter thundercats migas everyday carry squid palo santo leggings. Food truck truffaut  `,
+                },
+                {
+                    id: 9,
+                    title: "quarantine buddy",
+                    category: "shakes",
+                    price: 16.99,
+                    img: "/images/item-9.jpeg",
+                    desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
+                },
+            ];
+
+            const sectionCenter = document.querySelector(".section-center");
+
+            window.addEventListener("DOMContentLoaded", function () {
+                displayMenuItems(menu);
+                displayMenuButtons();
+            })
+
+            function displayMenuItems(m1) {
+                var display = m1.map(function (m2) {
+                    return ` <div class="menu-section">
+                <img src=${m2.img} class="menu-image" alt="">
+                <div class="content-section">
+                    <div class="dish">
+                        <h3 class="dish-name">${m2.title}</h3>
+                        <h3 class="dish-price">$${m2.price} </h3>
+                    </div>
+                    <p class="content">${m2.desc}</p>
+                </div>
+            </div>`
+                }).join('');
+                sectionCenter.innerHTML = display;
+            }
+            function displayMenuButtons() {
+                categories = menu.reduce(function (value, item) {
+                    if (!value.includes(item.category)) {
+                        value.push(item.category);
+                    }
+                    return value
+                }, ["all"]
+                );
+                console.log(categories)
+                const categoryBtn = categories.map(function (i) {
+                    return `<button type="button" class="filter-btn" data-id=${i}>${i}</button>`
+                }).join("");
+                console.log(categoryBtn)
+                const btnContainer = document.querySelector(".btn-container");
+                btnContainer.innerHTML = categoryBtn;
+
+
+                const filterBtn = document.querySelectorAll(".filter-btn");
+                filterBtn.forEach(function (fbtn) {
+                    fbtn.addEventListener("click", function (fBtn2) {
+                        clickBtn = fBtn2.currentTarget.dataset.id;
+                        console.log(clickBtn)
+                        const menuCategory = menu.filter(function (selectedCategory) {
+                            if (selectedCategory.category === clickBtn) {
+                                return selectedCategory;
+                            }
+                        })
+                        if (clickBtn === "all") {
+                            displayMenuItems(menu);
+                        }
+                        else {
+                            displayMenuItems(menuCategory);
+                        }
+                    })
+                })
+
+            }
+        
+
+    </script>
+</body>
+</html>
